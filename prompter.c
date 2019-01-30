@@ -1,5 +1,6 @@
 #include "prompter.h"
 #include "global_var.h"
+#include "list_utils.h"
 
 #include <stdio.h>
 
@@ -10,6 +11,7 @@ void prompt() {
 
 	do{
 		int choice;
+		printf("\n\n");
 		printf("1. Create a new list\n");
 		printf("2. Insert a new element in a given list in sorted order\n");
 		printf("3. Delete an element from a given list\n");
@@ -25,10 +27,19 @@ void prompt() {
 	
 		switch(choice) {
 			case 1:
-				printf("The sequence number of newly created list is: xx\n");
-				printf("Enter key value to be inserted in the newly created list-xx: \n");
+				printf("Enter key value to be inserted in the newly created list: \n");
 				scanf("%d", &key);
-				//TODO
+				int status = create_new_list(key);
+				if(status == 1){
+					printf("SUCCESS: ");
+				printf("The sequence number of newly created list is: %d\n", no_of_lists-1);
+				}
+				else if(status == -1) {
+					printf("FAILURE: Not enough memory\n");
+				}
+				else if(status == -2) {
+					printf("Maximum no of lists created");	
+				}
 				break;
 
 			case 2:

@@ -2,12 +2,12 @@
 #define GLOBAL_VAR_H
 #define NO_OF_ELEMS 50
 
-extern int arr[NO_OF_ELEMS];
 extern int no_of_elems;
+extern int linked_list[NO_OF_ELEMS*3];
 
-int listptrs[NO_OF_ELEMS];
-int no_of_lists;
+extern int listptrs[NO_OF_ELEMS];
+extern int no_of_lists;
 
-int free_list;
+extern int free_list;
 
 #endif
