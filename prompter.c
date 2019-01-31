@@ -6,7 +6,7 @@
 
 void prompt() {
 
-	int key, listno;
+	int key, list_no;
 	int exit = 0;
 
 	do{
@@ -44,23 +44,26 @@ void prompt() {
 
 			case 2:
 				printf("List you want to insert in: ");
-				scanf("%d", &listno);
-				if(!(listno < no_of_lists)) {
+				scanf("%d", &list_no);
+				if(!(list_no < no_of_lists)) {
 					printf("Invalid list no!!\n");
 					break;
 				}
 				printf("Enter the key value: ");
 				scanf("%d", &key);
-				printf("%dxx%dxx\n", listno, key);
-				insert_in_list(listno, key);
+				insert_in_list(list_no, key);
 				break;
 
 			case 3:
 				printf("List you want to delete from: ");
-				scanf("%d", &listno);
+				scanf("%d", &list_no);
+				if(!(list_no < no_of_lists)) {
+					printf("Invalid list no!!\n");
+					break;
+				}
 				printf("Enter the key value: ");
 				scanf("%d", &key);
-				//TODO
+				delete_from_list(list_no, key);
 				break;
 
 			case 4:
@@ -70,7 +73,7 @@ void prompt() {
 
 			case 5:
 				printf("Enter the list number: ");
-				scanf("%d", &listno);
+				scanf("%d", &list_no);
 				printf("Total number of nodes in list xx are: yy\n");
 				//TODO
 				break;
