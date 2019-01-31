@@ -110,6 +110,24 @@ void delete_from_list(int list_no, int key) {
 	printf("FAILURE: Element not found in list");
 }
 
+int all_elem_count() {
+	int sum = 0;
+	for(int i = 0; i < no_of_lists; ++i) 
+		sum += list_elem_count(i);
+	
+	return sum;
+}
+
+int list_elem_count(int list_no) {
+	int sum = 0;
+	int head = listptrs[list_no];
+	while(head != -1) {
+		++sum;	
+		head = linked_list[head+1];
+	}
+	return sum;
+}
+
 void display_all_lists() {
 	for(int i = 0; i < no_of_lists; ++i) {
 		printf("Elements of list-%d are: \n", i);

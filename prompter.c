@@ -67,15 +67,17 @@ void prompt() {
 				break;
 
 			case 4:
-				printf("Total number of nodes in all lists are: xx\n");
-				//TODO
+				printf("Total number of nodes in all lists are: %d\n", all_elem_count());
 				break;
 
 			case 5:
 				printf("Enter the list number: ");
 				scanf("%d", &list_no);
-				printf("Total number of nodes in list xx are: yy\n");
-				//TODO
+				if(!(list_no < no_of_lists)) {
+					printf("Invalid list no!!\n");
+					break;
+				}
+				printf("Total number of nodes in list %d are: %d\n", list_no, list_elem_count(list_no));
 				break;
 
 			case 6:
