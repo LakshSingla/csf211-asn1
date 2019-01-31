@@ -45,7 +45,7 @@ void insert_in_list(int list_no, int key){
 	linked_list[freeloc] = key;
 	int head = listptrs[list_no];
 	if(head == -1) {
-		head = freeloc;
+		listptrs[list_no] = freeloc;
 		linked_list[freeloc+1] = linked_list[freeloc+2] = -1;
 		return;	
 	}
@@ -138,6 +138,21 @@ void display_all_lists() {
 			head = linked_list[head+1];
 		}
 	}
+}
+
+void display_free_list() {
+	int head = free_list;
+	printf("Elements of free list are:\n[");
+	while(head != -1) {
+		if(linked_list[head+1] == -1) {
+			printf("%d", head);
+		}
+		else {
+			printf("%d, ", head);
+		}
+		head = linked_list[head+1];	
+	}
+	printf("]\n");
 }
 
 int obtain_loc() {

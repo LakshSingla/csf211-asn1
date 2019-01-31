@@ -85,8 +85,7 @@ void prompt() {
 				break;
 
 			case 7:
-				printf("Elements of free list are: ");
-				//TODO
+				display_free_list();
 				break;
 
 			case 8:
