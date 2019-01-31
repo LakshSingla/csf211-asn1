@@ -29,12 +29,61 @@ int create_new_list(int key) {
 		linked_list[pos] = key;
 		linked_list[pos+1] = -1;
 		linked_list[pos+2] = -1;
-		printf("****%d", pos);
 
 		no_of_lists++;
 	}
 
 	return 1;
+}
+
+void insert_in_list(int list_no, int key){
+	if(free_list == -1) {
+		printf("FAILURE: Insufficient memory to enter new element\n");	
+		return;
+	}
+	int freeloc = obtain_loc();
+	linked_list[freeloc] = key;
+	int head = listptrs[list_no];
+	if(head == -1) {
+		head = freeloc;
+		linked_list[freeloc+1] = linked_list[freeloc+2] = -1;
+		return;	
+	}
+	else if(linked_list[head] < key) {
+		linked_list[freeloc+1] = head;
+		linked_list[freeloc+2] = -1;
+		linked_list[head+2] = freeloc;
+		listptrs[list_no] = freeloc;
+	}
+	else {
+		int next = linked_list[head+1];				
+		while(next != -1) {
+			if(linked_list[next] < key){
+				break;
+			}			
+			next = linked_list[next+1];
+			head = linked_list[head+1];
+		}
+		linked_list[freeloc+1] = next;
+		linked_list[freeloc+2] = head;
+		linked_list[head+1] = freeloc;
+		if(next != -1){
+			linked_list[next+2] = freeloc;
+		}
+	}
+	printf("SUCCESS: Element inserted in list");
+}
+
+void display_all_lists() {
+	for(int i = 0; i < no_of_lists; ++i) {
+		printf("Elements of list-%d are: \n", i);
+		printf("KEY\tNEXT\tPREV\n");
+		int head = listptrs[i];	
+		while(head != -1) { 
+			printf("%d\t%d\t%d\n", linked_list[head], linked_list[head+1], linked_list[head+2]);
+			head = linked_list[head+1];
+		}
+	}
 }
 
 int obtain_loc() {

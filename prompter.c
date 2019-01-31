@@ -45,9 +45,14 @@ void prompt() {
 			case 2:
 				printf("List you want to insert in: ");
 				scanf("%d", &listno);
+				if(!(listno < no_of_lists)) {
+					printf("Invalid list no!!\n");
+					break;
+				}
 				printf("Enter the key value: ");
 				scanf("%d", &key);
-				//TODO
+				printf("%dxx%dxx\n", listno, key);
+				insert_in_list(listno, key);
 				break;
 
 			case 3:
@@ -71,7 +76,7 @@ void prompt() {
 				break;
 
 			case 6:
-				//TODO
+				display_all_lists();
 				break;
 
 			case 7:
