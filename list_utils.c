@@ -88,6 +88,7 @@ void delete_from_list(int list_no, int key) {
 			linked_list[next+2] = -1;
 		}
 		printf("SUCCESS: Deleted element from the list\n");
+		linked_list[head] = -256;
 		return;
 	}
 	else {
@@ -106,6 +107,7 @@ void delete_from_list(int list_no, int key) {
 			head = linked_list[head+1];	
 			next = linked_list[next+1];	
 		}
+		linked_list[next] = -256;
 	}
 	printf("FAILURE: Element not found in list");
 }

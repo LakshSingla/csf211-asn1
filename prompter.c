@@ -1,8 +1,12 @@
 #include "prompter.h"
-#include "global_var.h"
-#include "list_utils.h"
 
 #include <stdio.h>
+
+#include "global_var.h"
+#include "list_utils.h"
+#include "list_utils.h"
+#include "defragment.h"
+
 
 void prompt() {
 
@@ -89,7 +93,13 @@ void prompt() {
 				break;
 
 			case 8:
-				//TODO
+				defragment();
+				break;
+
+			case 9:
+				for(int i = 0; i < 150; i=i+3){
+					printf("* %d ", linked_list[i]);	
+				}
 				break;
 
 			case 0:
