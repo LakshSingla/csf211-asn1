@@ -3,6 +3,8 @@
 #include "global_var.h"
 #include "list_utils.h"
 
+#include <stdio.h>
+
 void defragment() {
 	int total_elems = all_elem_count();
 	int barrier = (total_elems-1) * 3;
@@ -19,12 +21,17 @@ void defragment() {
 
 		if(list_head > barrier) {
 			fl_head = update_fl_head(fl_head, barrier);	
+			printf("FLFL%d", fl_head);
 			if(fl_head == -1) break;
 			int x = linked_list[fl_head+1];
 			linked_list[fl_head] = linked_list[list_head];
 			linked_list[fl_head+1] = linked_list[list_head+1];
 			linked_list[fl_head+2] = linked_list[list_head+2];
 			listptrs[i] = fl_head;
+
+			list_head = fl_head;
+			list_next = linked_list[list_head+1];
+
 			if(list_next != -1) {
 				linked_list[list_next+2] = fl_head;
 			}
@@ -34,11 +41,12 @@ void defragment() {
 		while(list_next != -1) {
 			if(list_next > barrier)	{
 				fl_head = update_fl_head(fl_head, barrier);
+				printf("FLFL%d", fl_head);
 				if(fl_head == -1) break;
 				int x = linked_list[fl_head+1];
-				linked_list[fl_head] = linked_list[list_head];
-				linked_list[fl_head+1] = linked_list[list_head+1];
-				linked_list[fl_head+2] = linked_list[list_head+2];
+				linked_list[fl_head] = linked_list[list_next];
+				linked_list[fl_head+1] = linked_list[list_next+1];
+				linked_list[fl_head+2] = linked_list[list_next+2];
 
 				linked_list[list_head+1] = fl_head;
 				
@@ -62,7 +70,7 @@ void defragment() {
 	}
 
 
-	linked_list[(no_of_elems-1)*3] = -1;
+	linked_list[(no_of_elems-1)*3 + 1] = -1;
 
 }
 
