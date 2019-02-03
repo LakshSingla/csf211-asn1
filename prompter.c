@@ -15,7 +15,6 @@ void prompt() {
 
 	do{
 		int choice;
-		printf("\n\n");
 		printf("1. Create a new list\n");
 		printf("2. Insert a new element in a given list in sorted order\n");
 		printf("3. Delete an element from a given list\n");
@@ -25,13 +24,12 @@ void prompt() {
 		printf("7. Display free list\n");
 		printf("8. Perform defragmentation\n");
 		printf("0. Press 0 to exit\n");
-		
-		printf("Select an option: \n");
+		printf("Select an option: ");
 		scanf("%d", &choice);
 	
 		switch(choice) {
 			case 1:
-				printf("Enter key value to be inserted in the newly created list: \n");
+				printf("Enter key value to be inserted in the newly created list: ");
 				scanf("%d", &key);
 				int status = create_new_list(key);
 				if(status == 1){

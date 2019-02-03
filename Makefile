@@ -12,3 +12,6 @@ $(EXE): $(OBJ)
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) $*.c
+
+clean: 
+	rm $(OBJ) $(EXE)

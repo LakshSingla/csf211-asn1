@@ -21,7 +21,6 @@ void defragment() {
 
 		if(list_head > barrier) {
 			fl_head = update_fl_head(fl_head, barrier);	
-			printf("FLFL%d", fl_head);
 			if(fl_head == -1) break;
 			int x = linked_list[fl_head+1];
 			linked_list[fl_head] = linked_list[list_head];
@@ -41,7 +40,6 @@ void defragment() {
 		while(list_next != -1) {
 			if(list_next > barrier)	{
 				fl_head = update_fl_head(fl_head, barrier);
-				printf("FLFL%d", fl_head);
 				if(fl_head == -1) break;
 				int x = linked_list[fl_head+1];
 				linked_list[fl_head] = linked_list[list_next];
@@ -71,6 +69,7 @@ void defragment() {
 
 
 	linked_list[(no_of_elems-1)*3 + 1] = -1;
+	printf("Defragmentation Complete\n");
 
 }
 
