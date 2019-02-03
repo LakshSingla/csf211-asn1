@@ -1,0 +1,7 @@
+
+***********************************************************************
+TOP LEVEL COMMENTS DESCRIBING FUNCTION AND HOW THEY WORK(IF RELEVENT)
+ARE DESCRIBED IN CORRESPONDING .h FILES
+PLEASE REFER TO defragment.h to see the working of defragmentation 
+Run `make clean` to clean this build directory of object and exe files
+***********************************************************************

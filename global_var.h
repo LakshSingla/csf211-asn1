@@ -2,6 +2,8 @@
 #define GLOBAL_VAR_H
 #define NO_OF_ELEMS 50
 
+/*GLOBAL VARIABLES IN USAGE*/
+
 extern int no_of_elems;
 extern int linked_list[NO_OF_ELEMS*3];
 

@@ -73,7 +73,6 @@ void defragment() {
 
 }
 
-
 int update_fl_head(int fl_head, int barrier) {
 	while(fl_head > barrier) fl_head = linked_list[fl_head+1];
 	return fl_head;

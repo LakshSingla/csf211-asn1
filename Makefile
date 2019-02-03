@@ -8,10 +8,11 @@ CFLAGS = -Wall -Werror
 RM = rm
 
 $(EXE): $(OBJ)
+	cat README && \
 	$(CC) -o $(EXE) $(OBJ)
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) $*.c
 
 clean: 
-	rm $(OBJ) $(EXE)
+	rm -f $(OBJ) $(EXE)
