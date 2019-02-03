@@ -35,7 +35,7 @@ void prompt() {
 				int status = create_new_list(key);
 				if(status == 1){
 					printf("SUCCESS: ");
-					printf("The sequence number of newly created list is: %d\n", no_of_lists-1);
+					printf("The sequence number of newly created list is: %d\n", no_of_lists);
 				}
 				else if(status == -1) {
 					printf("FAILURE: Not enough memory\n");
@@ -48,25 +48,25 @@ void prompt() {
 			case 2:
 				printf("List you want to insert in: ");
 				scanf("%d", &list_no);
-				if(!(list_no < no_of_lists)) {
+				if(!(list_no <= no_of_lists && list_no >= 1)) {
 					printf("Invalid list no!!\n");
 					break;
 				}
 				printf("Enter the key value: ");
 				scanf("%d", &key);
-				insert_in_list(list_no, key);
+				insert_in_list(list_no-1, key);
 				break;
 
 			case 3:
 				printf("List you want to delete from: ");
 				scanf("%d", &list_no);
-				if(!(list_no < no_of_lists)) {
+				if(!(list_no <= no_of_lists && list_no >= 1)) {
 					printf("Invalid list no!!\n");
 					break;
 				}
 				printf("Enter the key value: ");
 				scanf("%d", &key);
-				delete_from_list(list_no, key);
+				delete_from_list(list_no-1, key);
 				break;
 
 			case 4:
@@ -76,11 +76,11 @@ void prompt() {
 			case 5:
 				printf("Enter the list number: ");
 				scanf("%d", &list_no);
-				if(!(list_no < no_of_lists)) {
+				if(!(list_no <= no_of_lists && list_no >= 1)) {
 					printf("Invalid list no!!\n");
 					break;
 				}
-				printf("Total number of nodes in list %d are: %d\n", list_no, list_elem_count(list_no));
+				printf("Total number of nodes in list %d are: %d\n", list_no, list_elem_count(list_no-1));
 				break;
 
 			case 6:

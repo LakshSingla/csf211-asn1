@@ -132,7 +132,7 @@ int list_elem_count(int list_no) {
 
 void display_all_lists() {
 	for(int i = 0; i < no_of_lists; ++i) {
-		printf("\nElements of list-%d are: \n", i);
+		printf("\nElements of list-%d are: \n", i+1);
 		printf("KEY\tNEXT\tPREV\n");
 		int head = listptrs[i];	
 		while(head != -1) { 
