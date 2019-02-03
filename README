@@ -1,7 +1,11 @@
+The list is sorted in descending order i.e. head points to the maximum
+element in the list (as shown in the sample run in the assignment)
 
-***********************************************************************
-TOP LEVEL COMMENTS DESCRIBING FUNCTION AND HOW THEY WORK(IF RELEVENT)
-ARE DESCRIBED IN CORRESPONDING .h FILES
-PLEASE REFER TO defragment.h to see the working of defragmentation 
-Run `make clean` to clean this build directory of object and exe files
-***********************************************************************
+`delete_from_list` deletes the first key found in the list
+
+Although the list is of fixed size (I assumed it because the assignment mentions
+MEMROY NOT AVAILABLE ERROR, which can only come if an upperlimit is present on the list),
+it can be easily extended programatically.
+Modify the preprocessor directive #NO_OF_ELEMS (in global_var.h) from 50 to the limit you want
+
+#NO_OF_ELEMS denotes the maximum capacity of all the lists included

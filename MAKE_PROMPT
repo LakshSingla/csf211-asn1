@@ -1,0 +1,13 @@
+
+***********************************************************************
+* Top level comments describing function and how they work(if relevent)
+are described in corresponding .h files
+
+* Please refer to defragment.h to see the working of defragmentation 
+
+* Please refer to README to see the assumptions and how to modify the 
+maximum variables the list can support
+
+* Run `make clean` to clean this build directory of object and exe files
+***********************************************************************
+

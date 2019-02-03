@@ -8,7 +8,7 @@ CFLAGS = -Wall -Werror
 RM = rm
 
 $(EXE): $(OBJ)
-	cat README && \
+	cat MAKE_PROMPT && \
 	$(CC) -o $(EXE) $(OBJ)
 
 %.o: %.c
