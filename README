@@ -9,3 +9,5 @@ it can be easily extended programatically.
 Modify the preprocessor directive #NO_OF_ELEMS (in global_var.h) from 50 to the limit you want
 
 #NO_OF_ELEMS denotes the maximum capacity of all the lists included
+Currently it is set to be 50, i.e. maximum elements of all the lists in the program can
+be 50, and maximum no of lists that can be created are 50

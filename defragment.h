@@ -11,10 +11,14 @@
  * present inside or on this barrier is moved to a free location lying inside 
  * barrier (which is in wrong place).
  * In the end, free list is initialized once again from position after the 
- * barrier.
+ * barrier in a linear fashion.
  * It achieves the following 
- * Time Complexity: O(N), because it traverses each node of the 
- *                        list (be it free or filled) atmost once
+ *
+ * Time Complexity: O(N), because it traverses each node of the list (be it 
+ * free or filled) atmost twice (once while checking if in correct position 
+ * and shifting in constant time if not) and then once more over the free list 
+ * to update the next pointers
+ *
  * Space Complexity: O(1), because number of elements stored outside the arra
  *                         is constant
 **************************************************************************/

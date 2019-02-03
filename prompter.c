@@ -35,13 +35,13 @@ void prompt() {
 				int status = create_new_list(key);
 				if(status == 1){
 					printf("SUCCESS: ");
-				printf("The sequence number of newly created list is: %d\n", no_of_lists-1);
+					printf("The sequence number of newly created list is: %d\n", no_of_lists-1);
 				}
 				else if(status == -1) {
 					printf("FAILURE: Not enough memory\n");
 				}
 				else if(status == -2) {
-					printf("Maximum no of lists created");	
+					printf("Maximum no of lists created\n");	
 				}
 				break;
 

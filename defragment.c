@@ -19,6 +19,7 @@ void defragment() {
 		if(list_head == -1) continue;
 		int list_next = linked_list[list_head+1];
 
+		//Head of a list is in wrong place
 		if(list_head > barrier) {
 			fl_head = update_fl_head(fl_head, barrier);	
 			if(fl_head == -1) break;
@@ -37,6 +38,7 @@ void defragment() {
 			fl_head = x;
 		}
 
+		//Some middle element of the list is in wrong place
 		while(list_next != -1) {
 			if(list_next > barrier)	{
 				fl_head = update_fl_head(fl_head, barrier);
