@@ -9,5 +9,6 @@ are described in corresponding .h files
 maximum variables the list can support
 
 * Run `make clean` to clean this build directory of object and exe files
+* Run `./linked_list` to run the program in future
 ***********************************************************************
 

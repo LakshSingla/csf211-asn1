@@ -15,6 +15,7 @@ void prompt() {
 
 	do{
 		int choice;
+		printf("\n");
 		printf("1. Create a new list\n");
 		printf("2. Insert a new element in a given list in sorted order\n");
 		printf("3. Delete an element from a given list\n");

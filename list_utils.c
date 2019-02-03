@@ -71,7 +71,7 @@ void insert_in_list(int list_no, int key){
 			linked_list[next+2] = freeloc;
 		}
 	}
-	printf("SUCCESS: Element inserted in list");
+	printf("SUCCESS: Element inserted in list\n");
 }
 
 void delete_from_list(int list_no, int key) {
