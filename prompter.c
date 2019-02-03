@@ -97,7 +97,13 @@ void prompt() {
 				break;
 
 			case 9:
-				for(int i = 0; i < 150; i=i+3){
+				for(int i = 0; i < no_of_elems*3; i=i+3){
+					printf("* %d ", linked_list[i]);	
+				}
+				break;
+
+			case 10:
+				for(int i = 0; i < no_of_elems*3; ++i){
 					printf("* %d ", linked_list[i]);	
 				}
 				break;
