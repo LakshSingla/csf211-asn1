@@ -132,11 +132,23 @@ int list_elem_count(int list_no) {
 
 void display_all_lists() {
 	for(int i = 0; i < no_of_lists; ++i) {
-		printf("Elements of list-%d are: \n", i);
+		printf("\nElements of list-%d are: \n", i);
 		printf("KEY\tNEXT\tPREV\n");
 		int head = listptrs[i];	
 		while(head != -1) { 
-			printf("%d\t%d\t%d\n", linked_list[head], linked_list[head+1], linked_list[head+2]);
+			//printf("%d\t%d\t%d\n", linked_list[head], linked_list[head+1], linked_list[head+2]);
+			printf("%d\t", linked_list[head]);
+
+			if(linked_list[head+1] == -1)
+				printf("NIL\t");
+			else
+				printf("%d\t", linked_list[head+1]);
+
+			if(linked_list[head+2] == -1)
+				printf("NIL\n");
+			else
+				printf("%d\n", linked_list[head+2]);
+
 			head = linked_list[head+1];
 		}
 	}

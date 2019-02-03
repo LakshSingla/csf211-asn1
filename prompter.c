@@ -24,7 +24,7 @@ void prompt() {
 		printf("6. Display all lists\n");
 		printf("7. Display free list\n");
 		printf("8. Perform defragmentation\n");
-		printf("0. Press 0 to exit\n");
+		printf("9. Press 0 to exit\n");
 		printf("Select an option: ");
 		scanf("%d", &choice);
 	
@@ -94,19 +94,7 @@ void prompt() {
 			case 8:
 				defragment();
 				break;
-
-			case 9:
-				for(int i = 0; i < no_of_elems*3; i=i+3){
-					printf("* %d ", linked_list[i]);	
-				}
-				break;
-
-			case 10:
-				for(int i = 0; i < no_of_elems*3; ++i){
-					printf("* %d ", linked_list[i]);	
-				}
-				break;
-
+		
 			case 0:
 				exit = 1;		
 				break;
