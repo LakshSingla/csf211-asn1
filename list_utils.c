@@ -109,7 +109,7 @@ void delete_from_list(int list_no, int key) {
 		}
 		linked_list[next] = -256;
 	}
-	printf("FAILURE: Element not found in list");
+	printf("FAILURE: Element not found in list\n");
 }
 
 int all_elem_count() {
