@@ -9,8 +9,7 @@ RM = rm
 
 $(EXE): $(OBJ)
 	cat MAKE_PROMPT && \
-	$(CC) -o $(EXE) $(OBJ) &&\
-	./$(EXE)
+	$(CC) -o $(EXE) $(OBJ)
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) $*.c
